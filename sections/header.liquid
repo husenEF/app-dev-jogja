@@ -1,0 +1,51 @@
+<section class="site-header">
+    <div class="header-outer-container">
+        <div class="header-container">
+            <!-- Brand Logo -->
+            <div class="brand-logo">
+                <a href="{{ shop.url }}">
+                    <img src="{{ shop.brand.logo | image_url: width: 500, height:500  }}" alt="{{ shop.name }} Brand Logo">
+                </a>
+            </div>
+        </div>
+        <!-- Navigation Menu -->
+        <nav class="site-menu">
+            <ul>
+            {% for link in linklists.main-menu.links %}
+                <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+            {% endfor %}
+            <!-- Account Menu -->
+            <li>
+                <a href="/account" title="Account" class="account-menu">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M4 20c0-4 8-4 8-4s8 0 8 4"/>
+                </svg>
+                Account
+                </a>
+            </li>
+            <!-- Cart Menu -->
+            <li>
+                <a href="/cart" title="Cart" class="cart-menu">
+                <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="9" cy="20" r="1"/>
+                    <circle cx="17" cy="20" r="1"/>
+                    <path d="M5 6h2l1 7h8l1-7h2"/>
+                    <path d="M7 6V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/>
+                </svg>
+                Cart
+                </a>
+            </li>
+            </ul>
+        </nav>
+        <!-- Search Bar -->
+        <div class="header-search">
+            <form action="/search" method="get">
+                <input type="search" name="q" placeholder="Search products...">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</section>
