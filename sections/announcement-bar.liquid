@@ -1,0 +1,35 @@
+<div id="announcement-bar" style="background-color: {{ section.settings.announcement_bar_background_color | default: '#f5f5f5' }}; color: {{ section.settings.announcement_bar_text_color | default: '#333' }};" class="text-center py-2">
+  {{ section.settings.announcement_bar_text | default: '' }}
+</div>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "id": "announcement_bar_text",
+      "type": "text",
+      "label": "Announcement Bar Text",
+      "default": "My announcement bar text"
+    },
+    {
+      "id": "announcement_bar_background_color",
+      "type": "color",
+      "label": "Announcement Bar Background Color",
+      "default": "#f5f5f5"
+    },
+    {
+      "id": "announcement_bar_text_color",
+      "type": "color",
+      "label": "Announcement Bar Text Color",
+      "default": "#000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement Bar",
+      "category": "Header"
+    }
+  ]
+}
+{% endschema %}

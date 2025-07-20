@@ -1,16 +1,16 @@
-
-
-<div class="product">
-  <div class="product-image">
-    <img src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title }}">
-  </div>
-  <div class="product-details">
-    <h1>{{ product.title }}</h1>
-    <p>{{ product.price | money }}</p>
-    {% form 'product', product %}
-      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-      <input type="submit" value="Add to Cart" class="btn">
-    {% endform %}
-    <p class="product-description">{{ product.description }}</p>
+<div class="container mx-auto px-6 py-8">
+  <div class="flex flex-wrap -mx-6">
+    <div class="w-full md:w-1/2 px-6 mb-6 md:mb-0">
+      <img src="{{ product.featured_image | image_url: width: 500 }}" alt="{{ product.title }}" class="w-full h-auto">
+    </div>
+    <div class="w-full md:w-1/2 px-6">
+      <h1 class="text-3xl font-bold mb-4">{{ product.title }}</h1>
+      <p class="text-2xl font-bold mb-6">{{ product.price | money }}</p>
+      <p class="text-xl leading-relaxed mb-6">{{ product.description }}</p>
+      {% form 'product', product %}
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+      {% endform %}
+    </div>
   </div>
 </div>

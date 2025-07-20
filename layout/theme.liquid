@@ -2,10 +2,12 @@
     <head>
         <title>{{ page_title }}</title>
         {{ content_for_header }}
-        <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all"/>
+        {% comment %} <link rel="stylesheet" href="{{ 'theme.css' | asset_url }}" type="text/css" media="all"/> {% endcomment %}
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
     </head>
-    <body>
-        {% section 'header' %}
+    <body class="bg-gray-100">
+        {% sections 'header-group' %}
         {{ content_for_layout }}
     </body>
     </html>
