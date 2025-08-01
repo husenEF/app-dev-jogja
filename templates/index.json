@@ -2,13 +2,6 @@
     "sections":{
         "hero":{
             "type":"hero",
-            "settings":{
-                "heading":"Welcome to our store",
-                "subheading":"The best products at the best prices",
-                "background_image":"",
-                "call_to_action_text":"Shop Now",
-                "call_to_action_url":"/#"
-            }
         }
     },
     "order":["hero"]
